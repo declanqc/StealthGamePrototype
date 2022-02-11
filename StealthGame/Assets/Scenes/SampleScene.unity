@@ -284,6 +284,11 @@ MonoBehaviour:
   speed: 5
   waitTime: 0.3
   turnSpeed: 90
+  spotlight: {fileID: 636961150}
+  viewDistance: 10
+  viewMask:
+    serializedVersion: 2
+    m_Bits: 64
   pathHolder: {fileID: 2004200664}
 --- !u!136 &389086645
 CapsuleCollider:
@@ -745,13 +750,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.41090995, y: -0, z: -0, w: 0.91167593}
+  m_LocalPosition: {x: 0, y: 8.79, z: -4.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 48.524, y: 0, z: 0}
 --- !u!1 &1352307909
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,7 +773,7 @@ GameObject:
   - component: {fileID: 1352307915}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -892,7 +897,7 @@ GameObject:
   - component: {fileID: 1737885132}
   - component: {fileID: 1737885131}
   - component: {fileID: 1737885130}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -969,7 +974,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737885129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.96, y: 0.84, z: 4.13}
+  m_LocalPosition: {x: 0.77, y: 0.84, z: 4.61}
   m_LocalScale: {x: 1.7074, y: 1.7074, z: 1.7074}
   m_Children: []
   m_Father: {fileID: 0}

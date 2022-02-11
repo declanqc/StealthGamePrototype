@@ -8,11 +8,22 @@ public class Guard : MonoBehaviour
     public float waitTime = .3f;
     public float turnSpeed = 90f;
 
+    public Light spotlight;
+    public float viewDistance;
+    public LayerMask viewMask;
+    float viewAngle;
+
     public Transform pathHolder;
+    Transform player;
+    Color originalSpotlightColor;
 
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        viewAngle = spotlight.spotAngle;
+        originalSpotlightColor = spotlight.color;
+
         Vector3[] waypoints = new Vector3[pathHolder.childCount];
         for(int i = 0; i < waypoints.Length; i ++)
         {
@@ -20,9 +31,40 @@ public class Guard : MonoBehaviour
             waypoints[i] = new Vector3(waypoints[i].x, transform.position.y, waypoints[i].z);
         }
         StartCoroutine(FollowPath(waypoints));
+
+        
     }
 
-   IEnumerator FollowPath(Vector3[] waypoints)
+    private void Update()
+    {
+        if(CanSeePlayer())
+        {
+            spotlight.color = Color.red;
+        }
+        else
+        {
+            spotlight.color = originalSpotlightColor;
+        }
+    }
+    bool CanSeePlayer()
+    {
+        if(Vector3.Distance(transform.position, player.position) < viewDistance)
+        {
+            Vector3 dirToPlayer = (player.position - transform.position).normalized;
+            float angleBetweenGuardAndPlayer = Vector3.Angle(transform.forward, dirToPlayer);
+            if(angleBetweenGuardAndPlayer < viewAngle / 2f)
+            {
+                if(!Physics.Linecast(transform.position, player.position, viewMask))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
+    IEnumerator FollowPath(Vector3[] waypoints)
     {
         transform.position = waypoints [0];
         int targetWaypointIndex = 1;
@@ -67,5 +109,9 @@ public class Guard : MonoBehaviour
             previousPosition = waypoint.position;
         }
         Gizmos.DrawLine(previousPosition, startPosition);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, transform.forward * viewDistance);
+
     }
 }
