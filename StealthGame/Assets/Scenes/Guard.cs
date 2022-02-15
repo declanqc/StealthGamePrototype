@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Guard : MonoBehaviour
 {
+    public Text timer;
     public float speed = 5f;
     public float waitTime = .3f;
     public float turnSpeed = 90f;
@@ -40,6 +42,8 @@ public class Guard : MonoBehaviour
         if(CanSeePlayer())
         {
             spotlight.color = Color.red;
+            timer.gameObject.SetActive(true);
+
         }
         else
         {
