@@ -9471,9 +9471,17 @@ PrefabInstance:
       value: Guard (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7198688951659556812, guid: 027d47616f974f14aa4319041b50e194, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7198688951659556812, guid: 027d47616f974f14aa4319041b50e194, type: 3}
       propertyPath: timer
       value: 
       objectReference: {fileID: 863357343}
+    - target: {fileID: 7198688951659556812, guid: 027d47616f974f14aa4319041b50e194, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 445366289}
     - target: {fileID: 7198688951659556812, guid: 027d47616f974f14aa4319041b50e194, type: 3}
       propertyPath: pathHolder
       value: 
@@ -13807,6 +13815,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 863357343}
     - target: {fileID: 7198688951659556812, guid: 027d47616f974f14aa4319041b50e194, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 445366289}
+    - target: {fileID: 7198688951659556812, guid: 027d47616f974f14aa4319041b50e194, type: 3}
       propertyPath: waitTime
       value: 1
       objectReference: {fileID: 0}
@@ -17055,9 +17067,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 863357343}
     - target: {fileID: 7198688951659556812, guid: 027d47616f974f14aa4319041b50e194, type: 3}
-      propertyPath: turnSpeed
-      value: 180
-      objectReference: {fileID: 0}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 445366289}
     - target: {fileID: 7198688951659556812, guid: 027d47616f974f14aa4319041b50e194, type: 3}
       propertyPath: pathHolder
       value: 
@@ -34268,6 +34280,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 863357343}
     - target: {fileID: 7198688951659556812, guid: 027d47616f974f14aa4319041b50e194, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 445366289}
+    - target: {fileID: 7198688951659556812, guid: 027d47616f974f14aa4319041b50e194, type: 3}
       propertyPath: pathHolder
       value: 
       objectReference: {fileID: 1368839751}
@@ -38694,6 +38710,10 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 863357343}
+    - target: {fileID: 7198688951659556812, guid: 027d47616f974f14aa4319041b50e194, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 445366289}
     - target: {fileID: 7198688951659556812, guid: 027d47616f974f14aa4319041b50e194, type: 3}
       propertyPath: pathHolder
       value: 

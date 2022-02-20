@@ -113,13 +113,14 @@ MonoBehaviour:
   timer: {fileID: 0}
   speed: 5
   waitTime: 0.3
-  turnSpeed: 90
+  turnSpeed: 180
   spotlight: {fileID: 7198688951974351622}
   viewDistance: 10
   viewMask:
     serializedVersion: 2
     m_Bits: 64
   pathHolder: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!1 &7198688951974351620
 GameObject:
   m_ObjectHideFlags: 0

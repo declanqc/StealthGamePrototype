@@ -18,7 +18,7 @@ public class Guard : MonoBehaviour
     public Transform pathHolder;
     Transform player;
     Color originalSpotlightColor;
-
+    public Transform Player;
 
     private void Start()
     {
@@ -43,6 +43,8 @@ public class Guard : MonoBehaviour
         {
             spotlight.color = Color.red;
             timer.gameObject.SetActive(true);
+            transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, 5f * Time.deltaTime);
+            transform.LookAt(Player);
 
         }
         else
