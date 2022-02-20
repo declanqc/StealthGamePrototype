@@ -7,6 +7,9 @@ public class Timer : MonoBehaviour
 {
     public float timeValue = 90;
     public Text timeText;
+    public GameObject TimerGuard1;
+    public GameObject TimerGuard2;
+
 
     private void Update()
     {
@@ -24,6 +27,9 @@ public class Timer : MonoBehaviour
         if(timeValue == 0)
         {
             Debug.Log("game over");
+            TimerGuard1.gameObject.SetActive(true);
+            TimerGuard2.gameObject.SetActive(true);
+
         }
 
     }

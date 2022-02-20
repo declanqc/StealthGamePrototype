@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7198688951659556813}
   - component: {fileID: 7198688951659556812}
   - component: {fileID: 8509377897048972416}
+  - component: {fileID: 527093047}
   m_Layer: 0
   m_Name: Guard
   m_TagString: Untagged
@@ -115,7 +116,8 @@ MonoBehaviour:
   speed: 5
   waitTime: 0.3
   turnSpeed: 180
-  timeToSpotPlayer: 1
+  timeToSpotPlayer: 2
+  chaseSpeed: 4
   spotlight: {fileID: 7198688951974351622}
   viewDistance: 10
   viewMask:
@@ -134,8 +136,20 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 2.1107676}
-  m_Center: {x: 0, y: 0, z: 0.5553838}
+  m_Size: {x: 1, y: 2, z: 1.4138031}
+  m_Center: {x: 0, y: 0, z: 0.20690155}
+--- !u!114 &527093047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5813937388721864381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2131857cf76930f48b21844a9f3bb986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7198688951974351620
 GameObject:
   m_ObjectHideFlags: 0

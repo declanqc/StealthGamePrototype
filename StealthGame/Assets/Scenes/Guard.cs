@@ -10,6 +10,9 @@ public class Guard : MonoBehaviour
     public float waitTime = .3f;
     public float turnSpeed = 90f;
     public float timeToSpotPlayer = .5f;
+    public float chaseSpeed = 0.01f;
+  
+
 
     public Light spotlight;
     public float viewDistance;
@@ -60,12 +63,19 @@ public class Guard : MonoBehaviour
         if(playerVisibleTimer >= timeToSpotPlayer)
         {
             timer.gameObject.SetActive(true);
-            transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, 5f * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, chaseSpeed * Time.deltaTime);
             transform.LookAt(Player);
+            pathHolder.gameObject.SetActive(false);
             
 
 
         }
+        else
+        {
+            pathHolder.gameObject.SetActive(true);
+        }
+
+
 
     }
     bool CanSeePlayer()
