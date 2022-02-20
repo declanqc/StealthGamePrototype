@@ -9,11 +9,13 @@ public class Guard : MonoBehaviour
     public float speed = 5f;
     public float waitTime = .3f;
     public float turnSpeed = 90f;
+    public float timeToSpotPlayer = .5f;
 
     public Light spotlight;
     public float viewDistance;
     public LayerMask viewMask;
     float viewAngle;
+    float playerVisibleTimer;
 
     public Transform pathHolder;
     Transform player;
@@ -39,22 +41,37 @@ public class Guard : MonoBehaviour
 
     private void Update()
     {
-        if(CanSeePlayer())
+       
+
+        if (CanSeePlayer())
         {
-            spotlight.color = Color.red;
-            timer.gameObject.SetActive(true);
-            transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, 5f * Time.deltaTime);
+            playerVisibleTimer += Time.deltaTime;
             transform.LookAt(Player);
 
         }
         else
         {
-            spotlight.color = originalSpotlightColor;
+            playerVisibleTimer -= Time.deltaTime;
         }
+        playerVisibleTimer = Mathf.Clamp(playerVisibleTimer, 0, timeToSpotPlayer);
+
+        spotlight.color = Color.Lerp(originalSpotlightColor, Color.red, playerVisibleTimer / timeToSpotPlayer);
+
+        if(playerVisibleTimer >= timeToSpotPlayer)
+        {
+            timer.gameObject.SetActive(true);
+            transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, 5f * Time.deltaTime);
+            transform.LookAt(Player);
+            
+
+
+        }
+
     }
     bool CanSeePlayer()
     {
-        if(Vector3.Distance(transform.position, player.position) < viewDistance)
+        
+        if (Vector3.Distance(transform.position, player.position) < viewDistance)
         {
             Vector3 dirToPlayer = (player.position - transform.position).normalized;
             float angleBetweenGuardAndPlayer = Vector3.Angle(transform.forward, dirToPlayer);
@@ -68,6 +85,7 @@ public class Guard : MonoBehaviour
         }
         return false;
     }
+
 
 
     IEnumerator FollowPath(Vector3[] waypoints)
@@ -89,6 +107,7 @@ public class Guard : MonoBehaviour
             }
             yield return null;
         }
+     
     }
 
     IEnumerator TurnToFace(Vector3 lookTarget)
