@@ -14,7 +14,7 @@ public class Door : MonoBehaviour
         if (Input.GetKeyDown("e") && NearDoor)
 
              {
-
+            
             DoorOpen = !DoorOpen;
         
              }
@@ -22,6 +22,7 @@ public class Door : MonoBehaviour
         if(DoorOpen)
         {
             door.SetBool("NearDoor", true);
+            
         }
         else if(!DoorOpen)
         {

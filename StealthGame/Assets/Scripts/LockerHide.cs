@@ -7,6 +7,7 @@ public class LockerHide : MonoBehaviour
     public GameObject player;
     bool NearLocker = false;
     bool InLocker = false;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
@@ -37,7 +38,7 @@ public class LockerHide : MonoBehaviour
         {
             player.transform.position = new Vector3(27.5f, 1f, 5.38000011f);
         }
-
+        
     }
 
 

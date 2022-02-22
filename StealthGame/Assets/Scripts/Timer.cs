@@ -9,6 +9,9 @@ public class Timer : MonoBehaviour
     public Text timeText;
     public GameObject TimerGuard1;
     public GameObject TimerGuard2;
+    public GameObject TimerGuard3;
+    public GameObject TimerGuard4;
+
 
 
     private void Update()
@@ -29,6 +32,9 @@ public class Timer : MonoBehaviour
             Debug.Log("game over");
             TimerGuard1.gameObject.SetActive(true);
             TimerGuard2.gameObject.SetActive(true);
+            TimerGuard3.gameObject.SetActive(true);
+            TimerGuard4.gameObject.SetActive(true);
+
 
         }
 

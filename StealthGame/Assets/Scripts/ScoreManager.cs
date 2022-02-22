@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
 
     public Text scoretext;
 
-    int score = 0;
+    public int score = 0;
 
     private void Awake()
     {
@@ -26,5 +26,16 @@ public class ScoreManager : MonoBehaviour
         scoretext.text = score.ToString();
     }
 
-
+    void OnTriggerEnter(Collider other)
+    {
+        if (ScoreManager.instance.score == 2000 && other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Success!");
+        }
+        else if(ScoreManager.instance.score < 2000 && other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Keep going!");
+        }
+    }
+    
 }
