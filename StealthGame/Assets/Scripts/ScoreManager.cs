@@ -7,6 +7,7 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager instance;
 
     public Text scoretext;
+    public GameObject winText;
 
     public int score = 0;
 
@@ -31,6 +32,7 @@ public class ScoreManager : MonoBehaviour
         if (ScoreManager.instance.score == 2000 && other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Success!");
+            winText.gameObject.SetActive(true);
         }
         else if(ScoreManager.instance.score < 2000 && other.gameObject.CompareTag("Player"))
         {
