@@ -1,21 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Door : MonoBehaviour
 {
     public Animator door;
     bool NearDoor = false;
     bool DoorOpen = false;
+    public Text DoorText;
 
      void Update()
     {
-       
+      
+
+
+
         if (Input.GetKeyDown("e") && NearDoor)
 
              {
             
             DoorOpen = !DoorOpen;
+            DoorText.gameObject.SetActive(false);
+            
         
              }
 
@@ -42,6 +49,7 @@ public class Door : MonoBehaviour
         {
             NearDoor = true;            
             Debug.Log("neardoor");
+            DoorText.gameObject.SetActive(true);
         }
         
     }
@@ -51,6 +59,7 @@ public class Door : MonoBehaviour
         {
             NearDoor = false;
             Debug.Log("notneardoor");
+            DoorText.gameObject.SetActive(false);
         }
     }
 }
