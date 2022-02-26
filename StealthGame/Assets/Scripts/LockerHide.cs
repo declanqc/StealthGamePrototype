@@ -5,6 +5,7 @@ using UnityEngine;
 public class LockerHide : MonoBehaviour
 {
     public GameObject player;
+    public Transform LockerCenter;
     bool NearLocker = false;
     bool InLocker = false;
 
@@ -26,17 +27,17 @@ public class LockerHide : MonoBehaviour
     {
         if(NearLocker == true && Input.GetKeyDown("e"))
         {
-            player.transform.position = new Vector3(27.5f, 1f, 5.38000011f);
+            player.transform.position = LockerCenter.transform.position;
             InLocker = !InLocker;
         }
 
         if(NearLocker && InLocker && Input.GetKeyDown("e"))
         {
-            player.transform.position = new Vector3(27.5f, 1f, 2.70000005f);
+            player.transform.position = LockerCenter.transform.position;
         }
         else if(NearLocker && !InLocker && Input.GetKeyDown("e"))
         {
-            player.transform.position = new Vector3(27.5f, 1f, 5.38000011f);
+            player.transform.position = LockerCenter.transform.position;
         }
         
     }
