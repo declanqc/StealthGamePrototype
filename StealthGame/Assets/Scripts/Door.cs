@@ -21,12 +21,12 @@ public class Door : MonoBehaviour
 
         if(DoorOpen)
         {
-            door.SetBool("NearDoor", true);
+            door.SetBool("NearDoor1", true);
             
         }
         else if(!DoorOpen)
         {
-            door.SetBool("NearDoor", false);
+            door.SetBool("NearDoor1", false);
         }
         
   
