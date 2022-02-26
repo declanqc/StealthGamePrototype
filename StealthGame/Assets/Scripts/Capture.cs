@@ -10,7 +10,7 @@ public class Capture : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             Debug.Log("gameover");
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("James.G.Scene");
         }
     }
 }
