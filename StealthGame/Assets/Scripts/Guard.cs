@@ -50,6 +50,7 @@ public class Guard : MonoBehaviour
         {
             playerVisibleTimer += Time.deltaTime;
             transform.LookAt(Player);
+            StopFollowpath();
 
         }
         else
@@ -65,18 +66,24 @@ public class Guard : MonoBehaviour
             timer.gameObject.SetActive(true);
             transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, chaseSpeed * Time.deltaTime);
             transform.LookAt(Player);
-            pathHolder.gameObject.SetActive(false);
-            
+
+            StopFollowpath();
 
 
         }
         else
         {
-            pathHolder.gameObject.SetActive(true);
+
         }
 
 
 
+    }
+
+
+    void StopFollowpath()
+    {
+        StopCoroutine("FollowPath");
     }
     bool CanSeePlayer()
     {
