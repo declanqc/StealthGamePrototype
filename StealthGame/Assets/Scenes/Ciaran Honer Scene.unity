@@ -1799,7 +1799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoretext: {fileID: 949573985}
-  winText: {fileID: 0}
+  winText: {fileID: 1995839936}
   score: 0
 --- !u!1 &419881211
 GameObject:
