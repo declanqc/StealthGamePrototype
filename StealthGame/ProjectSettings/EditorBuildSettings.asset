@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Prototype.unity
+    path: Assets/Scenes/Ciaran Honer Scene.unity
     guid: 4f46a58bd64776548a21b66a9ec16c2d
   - enabled: 1
     path: Assets/Scenes/James.G.Scene.unity
