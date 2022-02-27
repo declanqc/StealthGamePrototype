@@ -1316,6 +1316,8 @@ MonoBehaviour:
   timeText: {fileID: 366472727}
   TimerGuard1: {fileID: 590564513}
   TimerGuard2: {fileID: 570117500}
+  TimerGuard3: {fileID: 0}
+  TimerGuard4: {fileID: 0}
 --- !u!114 &366472727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2380,11 +2382,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BindingMode: 1
+  m_BindingMode: 0
   m_FollowOffset: {x: 0, y: 22.15, z: 8.939997}
-  m_XDamping: 1
+  m_XDamping: 3
   m_YDamping: 1
-  m_ZDamping: 1
+  m_ZDamping: 3
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
