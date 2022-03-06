@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Capture : MonoBehaviour
 {
+    public GameObject thePlayer;
+    public GameObject theTarget;
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
             Debug.Log("gameover");
-            ScoreManager.instance.score = 0;
-            SceneManager.LoadScene("James.G.Scene");
+            ScoreManager.instance.LosePoint();
+            thePlayer.transform.position = theTarget.transform.position;
+            //SceneManager.LoadScene("James.G.Scene");
         }
     }
 }

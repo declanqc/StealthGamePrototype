@@ -21,6 +21,11 @@ public class ScoreManager : MonoBehaviour
         scoretext.text = score.ToString();
     }
 
+    public void LosePoint()
+    {
+        score -= 500;
+        scoretext.text = score.ToString();
+    }
     public void AddPoint()
     {
         score += 500;
