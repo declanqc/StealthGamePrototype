@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
     public float moveSpeed = 7;
     public float smoothMoveTime = .1f;
     public float turnSpeed = 8;
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
 
 
         velocity = transform.forward * moveSpeed * smoothInputMagnitude;
+
     }
     private void FixedUpdate()
     {
