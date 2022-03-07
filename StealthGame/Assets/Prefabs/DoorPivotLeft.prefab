@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2599842379172863833}
   - component: {fileID: 2599842379172863832}
   m_Layer: 0
-  m_Name: DoorPivot
+  m_Name: DoorPivotLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
